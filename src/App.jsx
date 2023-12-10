@@ -7,6 +7,11 @@ import ProjectItem from "./components/projectList/ProjectItem";
 
 import "./App.css";
 
+import Footer from "./components/Footer/Footer";
+import Header from "./components/Header/Header";
+
+import ProjectDetailsModal from "./components/Modals/ProjectDetailsModal/ProjectDetailsModal";
+
 const CONTRACT_ADDRESS = "0x100590AaE16a843E588954B32A80686dB71a91e6";
 
 const DApp = {
@@ -52,6 +57,8 @@ const DApp = {
 function App() {
   const [projects, setProject] = useState("");
 
+  
+
   useEffect(() => {
     DApp.init().then((contract) => {
       contract.methods
@@ -68,33 +75,22 @@ function App() {
   }, []);
   return (
     <div className="App">
-
-      <header id="header-main-page">
-        <h1>PI_nance</h1>
-        <p>Your project finance manager.</p>
-
-      </header>
-
+      <Header />
+      
       <main id="content-main-page">
+        <section id="content-new-project">
+          <button id="button-new-project">+ Cadastrar Novo Projeto</button>
+        </section>
         <div className="projects-container">
-          <h2>Projects</h2>
           <div className="projects-list">
             {projects &&
               projects.map((project, index) => (
-                <ProjectItem
-                  key={index}
-                  {...project}
-                />
+                <ProjectItem key={index} {...project} />
               ))}
           </div>
-          
         </div>
       </main>
-
-      <footer id="footer-main-page">
-
-      </footer>
-
+      <Footer />
     </div>
   );
 }

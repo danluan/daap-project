@@ -1,0 +1,105 @@
+.project-details-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width:100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-details-modal-content {
+    min-width: 400px;
+    width: 70%;
+    height: 60%;
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.project-details-container {
+display: flex;
+flex-direction: column;
+height: 100%;
+padding: 0 1.5rem;
+}
+
+.project-details-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    max-width: 80%;
+}
+
+.project-details-container p {
+    padding-bottom: .4rem;
+}
+
+.project-details-status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 5%;
+    padding: .5rem 1.5rem;
+    border-radius: 1rem;
+}
+
+p.Ativo {
+    background-color: green;
+    color: var(--white);
+    
+}
+
+p.Desconhecido {
+    background-color: #666666;
+    color: var(--white);
+}
+
+
+
+.project-details-container p {
+margin: 0;
+margin-bottom: .5rem;
+}
+.project-details-container progress {
+width: 100%;
+height: 3rem;
+}
+    progress::-moz-progress-bar { background: var(--light-blue); }
+    progress::-webkit-progress-value { background: var(--light-blue); }
+    progress { color: var(--light-blue); }
+
+
+  
+  .project-details-modal-close-button {
+    position: relative;
+    left: 95%;
+    font-size: 2rem;
+    color: #ff0000;
+    cursor: pointer;
+}
+
+.project-details-modal-pinance-button {
+    position: inherit;
+    width: 100%;
+    padding: .5rem 1rem;
+    font-size: 1.5rem;
+    border-radius: 1rem;
+    color: white;
+    background-color: var(--dark-blue);
+    cursor: pointer;
+}
+
+.project-details-modal-pinance-button:hover {
+    background-color: var(--dark-blue-hover);
+}
+
+.project-details-modal-pinance-button:active {
+    background-color: var(--regular-blue);
+}

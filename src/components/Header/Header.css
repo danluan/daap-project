@@ -1,0 +1,20 @@
+#header-main-page {
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: center;
+    width: 60%;
+    padding: 1rem;
+}
+  
+#header-logo {
+  width: 20rem;
+  min-width: 300px;
+}
+
+@media (max-width: 1150px) {
+    #header-main-page {
+        flex-direction: column;
+    }
+    
+}
