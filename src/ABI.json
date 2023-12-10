@@ -1,25 +1,128 @@
 [
 	{
+		"inputs": [],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"anonymous": false,
 		"inputs": [
 			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "projectId",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "donor",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
+			}
+		],
+		"name": "DonationReceived",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "projectId",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
 				"internalType": "string",
 				"name": "name",
 				"type": "string"
 			},
 			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "owner",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "string",
+				"name": "educationInstitution",
+				"type": "string"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "deadline",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
 				"internalType": "string",
 				"name": "description",
 				"type": "string"
 			},
 			{
+				"indexed": false,
 				"internalType": "uint256",
-				"name": "goal",
+				"name": "fundingGoal",
+				"type": "uint256"
+			}
+		],
+		"name": "ProjectCreated",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "projectId",
 				"type": "uint256"
 			},
 			{
-				"internalType": "address",
-				"name": "owner",
-				"type": "address"
+				"indexed": false,
+				"internalType": "enum Pinance.Status",
+				"name": "status",
+				"type": "uint8"
+			}
+		],
+		"name": "ProjectFinalized",
+		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_name",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_educationInstitution",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_deadline",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "_description",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_fundingGoal",
+				"type": "uint256"
 			}
 		],
 		"name": "createProject",
@@ -28,81 +131,29 @@
 		"type": "function"
 	},
 	{
-		"inputs": [],
-		"stateMutability": "nonpayable",
-		"type": "constructor"
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_projectId",
+				"type": "uint256"
+			}
+		],
+		"name": "donate",
+		"outputs": [],
+		"stateMutability": "payable",
+		"type": "function"
 	},
 	{
 		"inputs": [
 			{
 				"internalType": "uint256",
-				"name": "id",
+				"name": "_projectId",
 				"type": "uint256"
 			}
 		],
-		"name": "getProject",
-		"outputs": [
-			{
-				"components": [
-					{
-						"internalType": "uint256",
-						"name": "id",
-						"type": "uint256"
-					},
-					{
-						"internalType": "string",
-						"name": "name",
-						"type": "string"
-					},
-					{
-						"internalType": "string",
-						"name": "description",
-						"type": "string"
-					},
-					{
-						"internalType": "address",
-						"name": "owner",
-						"type": "address"
-					},
-					{
-						"internalType": "uint256",
-						"name": "goal",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "balance",
-						"type": "uint256"
-					},
-					{
-						"components": [
-							{
-								"internalType": "address",
-								"name": "sender",
-								"type": "address"
-							},
-							{
-								"internalType": "uint256",
-								"name": "value",
-								"type": "uint256"
-							}
-						],
-						"internalType": "struct Pinance.Transaction[]",
-						"name": "transactions",
-						"type": "tuple[]"
-					},
-					{
-						"internalType": "uint256",
-						"name": "transactions_count",
-						"type": "uint256"
-					}
-				],
-				"internalType": "struct Pinance.Project",
-				"name": "",
-				"type": "tuple"
-			}
-		],
-		"stateMutability": "view",
+		"name": "finalizeProject",
+		"outputs": [],
+		"stateMutability": "payable",
 		"type": "function"
 	},
 	{
@@ -112,14 +163,24 @@
 			{
 				"components": [
 					{
-						"internalType": "uint256",
-						"name": "id",
-						"type": "uint256"
-					},
-					{
 						"internalType": "string",
 						"name": "name",
 						"type": "string"
+					},
+					{
+						"internalType": "address payable",
+						"name": "owner",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "educationInstitution",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "deadline",
+						"type": "uint256"
 					},
 					{
 						"internalType": "string",
@@ -127,25 +188,25 @@
 						"type": "string"
 					},
 					{
-						"internalType": "address",
-						"name": "owner",
-						"type": "address"
-					},
-					{
 						"internalType": "uint256",
-						"name": "goal",
+						"name": "fundingGoal",
 						"type": "uint256"
 					},
 					{
 						"internalType": "uint256",
-						"name": "balance",
+						"name": "fundsRaised",
 						"type": "uint256"
+					},
+					{
+						"internalType": "enum Pinance.Status",
+						"name": "status",
+						"type": "uint8"
 					},
 					{
 						"components": [
 							{
 								"internalType": "address",
-								"name": "sender",
+								"name": "donor",
 								"type": "address"
 							},
 							{
@@ -157,16 +218,91 @@
 						"internalType": "struct Pinance.Transaction[]",
 						"name": "transactions",
 						"type": "tuple[]"
-					},
-					{
-						"internalType": "uint256",
-						"name": "transactions_count",
-						"type": "uint256"
 					}
 				],
 				"internalType": "struct Pinance.Project[]",
 				"name": "",
 				"type": "tuple[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getTime",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "projectCount",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "projects",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "name",
+				"type": "string"
+			},
+			{
+				"internalType": "address payable",
+				"name": "owner",
+				"type": "address"
+			},
+			{
+				"internalType": "string",
+				"name": "educationInstitution",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "deadline",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "description",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "fundingGoal",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "fundsRaised",
+				"type": "uint256"
+			},
+			{
+				"internalType": "enum Pinance.Status",
+				"name": "status",
+				"type": "uint8"
 			}
 		],
 		"stateMutability": "view",
