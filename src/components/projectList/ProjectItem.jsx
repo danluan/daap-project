@@ -24,11 +24,18 @@ const ProjectItem = (props) => {
             case "0":
                 setStatus('Ativo');
                 break;
+            case "1":
+                setStatus('Cancelado');
+                break;
+            case "2":
+                setStatus('Finalizado');
+                break;
             default:
                 setStatus('Desconhecido');
         }
     }, [props.status]);
     
+
     return (
         <div className='project-list-item'>
             <div className='project-left-info'>
@@ -38,13 +45,13 @@ const ProjectItem = (props) => {
                 <p>{props.fundingGoal}</p>
             </div>
             <div className='project-right-info'>
-                <p>{projectStatus}</p>
+                <p className={'project-item-status ' + projectStatus}>{projectStatus}</p>
                 <button onClick={openProjectDetailsModal} className='project-details-button'> Ver detalhes</button>
             </div>
             {projectDetailsModal && 
             <ProjectDetailsModal 
-            closeProjectDetailsModal={closeProjectDetailsModal}
             {...props} 
+            closeProjectDetailsModal={closeProjectDetailsModal}
             status = {projectStatus}
             />}
         </div>

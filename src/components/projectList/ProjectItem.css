@@ -47,3 +47,33 @@
 .project-details-button:active {
     background-color: var(--regular-blue);
 }
+
+.project-item-status {
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 5%;
+    padding: 0.5rem 2.2rem;
+    border-radius: 20px;
+  }
+
+p.Ativo {
+    background-color: green;
+    color: var(--white);
+  }
+  
+  p.Finalizado {
+    background-color: #000000;
+    color: var(--white);
+  }
+  
+  p.Cancelado {
+    background-color: #960000;
+    color: var(--white);
+  }
+  
+  p.Desconhecido {
+    background-color: #666666;
+    color: var(--white);
+  }

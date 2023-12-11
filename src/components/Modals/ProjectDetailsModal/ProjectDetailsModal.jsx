@@ -6,7 +6,14 @@ import { FaHandHoldingUsd } from "react-icons/fa";
 import "./ProjectDetailsModal.css";
 
 export default function ProjectDetailsModal(props) {
+
     const [deadline, setDeadline] = useState("");
+    const [fundsRaised, setFundsRaised] = useState(0);
+
+    function weiToEtherString(wei) {
+        const WEI_PER_ETHER = (10 ** 18);
+        return (wei / WEI_PER_ETHER).toString();
+    }
 
     useEffect(() => {
         const deadlineMilliseconds = Number(props.deadline) / 1000000;
@@ -17,7 +24,9 @@ export default function ProjectDetailsModal(props) {
         const year = deadlineDate.getFullYear();
 
         setDeadline(`${day}/${month}/${year}`);
-    }, [props.deadline]);
+
+        setFundsRaised(props.fundsRaised.toString());
+    }, [props.deadline, props.fundsRaised]);
 
     return (
         <div className="project-details-modal">
@@ -33,19 +42,42 @@ export default function ProjectDetailsModal(props) {
                     <p>IE: {props.educationInstitution}</p>
                     <p>Dono: {props.owner}</p>
                     <p>Descrição: {props.description}</p>
-                    <p>Meta: {props.fundingGoal.toString()}</p>
-                    <p>Adquiridos: {props.fundsRaised.toString()}</p>
-                    <p>Data final: {deadline}</p>
-                    <div className="project-last-transactions">
-                        <h4>Últimas transações</h4>
+                    <p>Meta: {weiToEtherString(props.fundingGoal.toString())} Ether</p>
+                    <p>Adquiridos: {weiToEtherString(fundsRaised)} Ether</p>
+                    <p>Data limite: {deadline}</p>
+
+                    <div>
+
                     </div>
                     <progress
                         id="project-details-progress"
                         max={props.fundingGoal.toString()}
-                        value={props.fundsRaised.toString()}
+                        value={fundsRaised}
                     ></progress>
-                    <button className="project-details-modal-pinance-button">
-                        Pinance <FaHandHoldingUsd />
+                    <div className="project-details-pinance">
+                        <input className="project-details-pinance-value" type="number" placeholder="Valor em Wei" />
+
+                        <button className="project-details-modal-pinance-button" onClick={
+                            () => {
+                                console.log(props.index + 1)
+                                return props.sendFundsDApp(
+                                    props.index + 1,
+                                    Number(document.querySelector(".project-details-pinance-value").value)
+                                )
+                            }}>
+                            Pinance <FaHandHoldingUsd />
+                        </button>
+                    </div>
+
+                    <button className="project-details-finalize"
+                        onClick={
+                            () => {
+                                console.log(props.index + 1)
+                                return props.finalizeProjectDApp(
+                                    props.index + 1
+                                )
+                            }}>
+                        Finalizar projeto
                     </button>
                 </div>
             </div>
