@@ -1,0 +1,73 @@
+.create-project-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width:100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.create-project-modal-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 400px;
+    width: 70%;
+    height: 60%;
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.create-project-forms {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    width: 70%;
+}
+
+label {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+input, textarea {
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 1rem;
+    font-size: 18px;
+}
+
+.create-project-forms-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.create-project-forms-buttons button {
+    width: 40%;
+    height: 3rem;
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button.create-project-cancel {
+    background-color: #b00000;
+}
+
+button.create-project-create {
+    background-color: var(--dark-blue);
+}
+
+button:hover {
+    opacity: 0.8;
+}

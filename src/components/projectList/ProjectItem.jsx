@@ -1,11 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { FaPlus } from "react-icons/fa";
 
 import './ProjectItem.css';
 
 import ProjectDetailsModal from "../Modals/ProjectDetailsModal/ProjectDetailsModal";
-
-
 
 const ProjectItem = (props) => {
 
@@ -42,7 +39,7 @@ const ProjectItem = (props) => {
             </div>
             <div className='project-right-info'>
                 <p>{projectStatus}</p>
-                <button onClick={openProjectDetailsModal} className='project-details-button'> <FaPlus/> Ver detalhes</button>
+                <button onClick={openProjectDetailsModal} className='project-details-button'> Ver detalhes</button>
             </div>
             {projectDetailsModal && 
             <ProjectDetailsModal 

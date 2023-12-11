@@ -10,7 +10,7 @@ import "./App.css";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 
-import ProjectDetailsModal from "./components/Modals/ProjectDetailsModal/ProjectDetailsModal";
+import CreateProjectModal from "./components/Modals/CreateProjectModal/CreateProjectModal";
 
 const CONTRACT_ADDRESS = "0x100590AaE16a843E588954B32A80686dB71a91e6";
 
@@ -56,8 +56,32 @@ const DApp = {
 
 function App() {
   const [projects, setProject] = useState("");
+  const [contract, setContract] = useState("");
 
-  
+  const [createProjectModal, setCreateProjectModal] = useState(false);
+
+  const openCreateProjectModal = () => {
+    setCreateProjectModal(true);
+  }
+
+  const closeCreateProjectModal = () => {
+    setCreateProjectModal(false);
+  }
+
+  function createProjectDApp (name, IE, description, goal, deadline) {
+    DApp.init().then((contract) => {
+      console.log(contract)
+      contract.methods
+        .createProject(name, IE, deadline, description, goal)
+        .send({ from: DApp.account })
+        .then((result) => {
+          console.log(result);
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    });
+  }
 
   useEffect(() => {
     DApp.init().then((contract) => {
@@ -72,14 +96,16 @@ function App() {
           console.error(error);
         });
     });
-  }, []);
+
+  }, [contract]);
+
   return (
     <div className="App">
       <Header />
-      
+
       <main id="content-main-page">
         <section id="content-new-project">
-          <button id="button-new-project">+ Cadastrar Novo Projeto</button>
+          <button onClick={openCreateProjectModal} id="button-new-project">+ Cadastrar Novo Projeto</button>
         </section>
         <div className="projects-container">
           <div className="projects-list">
@@ -90,6 +116,11 @@ function App() {
           </div>
         </div>
       </main>
+      {createProjectModal &&
+        <CreateProjectModal
+          closeCreateProjectModal={closeCreateProjectModal}
+          createProjectDApp={createProjectDApp}
+        />}
       <Footer />
     </div>
   );

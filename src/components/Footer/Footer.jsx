@@ -7,10 +7,10 @@ export default function Footer() {
     <footer id="footer-main-page">
         <div className="footer-content">
           <div className="footer-left">
-            <p>© 2023 Pinance</p>
+            <p>Copyright © PINANCE - 2023</p>
           </div>
           <div className="footer-right">
-            <p>Feito com amor por <a href="https://github.com/DanieLuan" target='blank'>@danluan</a></p>
+            <p>developed by <a href="https://github.com/DanieLuan" target='blank'>Daniel Luan Lourenço</a></p>
           </div>
         </div>
       </footer>
