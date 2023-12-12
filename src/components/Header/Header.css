@@ -6,10 +6,21 @@
     width: 60%;
     padding: 1rem;
 }
+
+#header-logo-images {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
   
 #header-logo {
-  width: 20rem;
-  min-width: 300px;
+  width: 200px;
+  min-width: 100px;
+}
+
+#header-logo-name {
+  width: 200px;
 }
 
 @media (max-width: 1150px) {

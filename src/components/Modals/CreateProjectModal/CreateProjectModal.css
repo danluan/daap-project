@@ -16,7 +16,7 @@
     justify-content: center;
     min-width: 400px;
     width: 70%;
-    height: 60%;
+    height: 70%;
     background: white;
     padding: 20px;
     border-radius: 5px;
@@ -28,7 +28,20 @@
     flex-direction: column;
     margin: 0 auto;
     padding: 0 1.5rem;
+    height: 90%;
     width: 70%;
+}
+
+.create-project-forms h1 {
+    margin-bottom: 2rem;
+}
+
+.create-project-forms label {
+    margin-bottom: 3.rem;
+}
+
+.create-project-forms input, textarea {
+    margin-bottom: 2rem;
 }
 
 
