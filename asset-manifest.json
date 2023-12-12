@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/daap-project/static/css/main.766bea96.css",
-    "main.js": "/daap-project/static/js/main.39e80161.js",
-    "static/js/787.4842e379.chunk.js": "/daap-project/static/js/787.4842e379.chunk.js",
+    "main.css": "/daap-project/static/css/main.c92a849c.css",
+    "main.js": "/daap-project/static/js/main.b9f4e6a2.js",
+    "static/js/787.234d500c.chunk.js": "/daap-project/static/js/787.234d500c.chunk.js",
     "static/media/logo-name.png": "/daap-project/static/media/logo-name.5ef1fb5d0028fc6301f4.png",
     "index.html": "/daap-project/index.html",
-    "main.766bea96.css.map": "/daap-project/static/css/main.766bea96.css.map",
-    "main.39e80161.js.map": "/daap-project/static/js/main.39e80161.js.map",
-    "787.4842e379.chunk.js.map": "/daap-project/static/js/787.4842e379.chunk.js.map"
+    "main.c92a849c.css.map": "/daap-project/static/css/main.c92a849c.css.map",
+    "main.b9f4e6a2.js.map": "/daap-project/static/js/main.b9f4e6a2.js.map",
+    "787.234d500c.chunk.js.map": "/daap-project/static/js/787.234d500c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.766bea96.css",
-    "static/js/main.39e80161.js"
+    "static/css/main.c92a849c.css",
+    "static/js/main.b9f4e6a2.js"
   ]
 }
