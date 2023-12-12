@@ -28,6 +28,9 @@ export default function ProjectDetailsModal(props) {
         setFundsRaised(props.fundsRaised.toString());
     }, [props.deadline, props.fundsRaised]);
 
+    
+    const isOwner = (props.owner.toLowerCase() === props.account);
+    
     return (
         <div className="project-details-modal">
             <div className="project-details-modal-content">
@@ -38,7 +41,7 @@ export default function ProjectDetailsModal(props) {
 
                 <div className="project-details-container">
                     <h1>{props.name}</h1>
-                    <p className={"project-details-status " + props.status}>{props.status}</p>
+                    <p className={"project-details-modal-status " + props.status}>{props.status}</p>
                     <p>IE: {props.educationInstitution}</p>
                     <p>Dono: {props.owner}</p>
                     <p>Descrição: {props.description}</p>
@@ -51,6 +54,7 @@ export default function ProjectDetailsModal(props) {
                     </div>
                     <progress
                         id="project-details-progress"
+                        alt={weiToEtherString(fundsRaised)}
                         max={props.fundingGoal.toString()}
                         value={fundsRaised}
                     ></progress>
@@ -59,7 +63,6 @@ export default function ProjectDetailsModal(props) {
 
                         <button className="project-details-modal-pinance-button" onClick={
                             () => {
-                                console.log(props.index + 1)
                                 return props.sendFundsDApp(
                                     props.index + 1,
                                     Number(document.querySelector(".project-details-pinance-value").value)
@@ -69,10 +72,12 @@ export default function ProjectDetailsModal(props) {
                         </button>
                     </div>
 
-                    <button className="project-details-finalize"
+                    <button 
+                        className={"project-details-finalize" + (!isOwner ? " isnt-owner" : "") + (props.status !== "Ativo" ? " isnt-active" : "")}
+                        disabled={(props.status !== "Ativo"|| !isOwner ? " disabled" : "")}
                         onClick={
                             () => {
-                                console.log(props.index + 1)
+
                                 return props.finalizeProjectDApp(
                                     props.index + 1
                                 )

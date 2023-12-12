@@ -31,16 +31,7 @@
     width: 70%;
 }
 
-label {
-    font-size: 1.2rem;
-    font-weight: bold;
-}
 
-input, textarea {
-    font-family: 'Montserrat', sans-serif;
-    margin-bottom: 1rem;
-    font-size: 18px;
-}
 
 .create-project-forms-buttons {
     display: flex;
@@ -71,3 +62,4 @@ button.create-project-create {
 button:hover {
     opacity: 0.8;
 }
+

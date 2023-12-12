@@ -57,7 +57,6 @@ const DApp = {
 
 function App() {
   const [projects, setProject] = useState("");
-  const [contract, setContract] = useState("");
 
   const [createProjectModal, setCreateProjectModal] = useState(false);
 
@@ -148,6 +147,7 @@ function App() {
                   key={index}
                   index={index}
                   {...project}
+                  account={DApp.account}
                   sendFundsDApp={sendFundsDApp}
                   finalizeProjectDApp={finalizeProjectDApp}
                 />

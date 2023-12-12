@@ -1,79 +1,160 @@
-@import '../../colors.css';
+@import "../../colors.css";
 
 .project-list-item {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-    margin-bottom: 3rem;
-    box-shadow: 0 0rem .5rem rgba(0, 0, 0, 0.1);
-}
-
-.projects-list-item h4 {
-    color: var(--dark-blue);
-    font-size: 1.7rem;
-}
-
-.project {
-    
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 3rem;
+  margin-bottom: 3rem;
+  height: 200px;
+  box-shadow: 0 0rem 0.5rem rgba(0, 0, 0, 0.1);
+  gap: 1rem;
 }
 
 .project-right-info {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 15%;
+  height: 100%;
+}
 
+.project-left-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  height: 100%;
+  width: 85%;
+}
+
+.project-left-info h4 {
+  margin: 0 0;
+  color: var(--dark-blue);
+  font-size: 32px;
+  height: 2.5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+p.description {
+  margin: 0 0;
+  font-size: 14px;
+  max-height: 3rem;
+  width: 90%;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .project-details-button {
-    background-color: var(--dark-blue);
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    color: var(--white);
-    border: none;
-    border-radius: .5rem;
-    padding: .2rem .8rem;
-    font-size: .8rem;
-    cursor: pointer;
-    transition: background-color .2s ease-in-out;
+  background-color: var(--dark-blue);
+  color: var(--white);
+  border: none;
+  border-radius: 1rem;
+  padding: .4rem 0.8rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  min-width: 100%;
+
 }
 
 .project-details-button:hover {
-    background-color: var(--dark-blue-hover);
+  background-color: var(--dark-blue-hover);
 }
 
 .project-details-button:active {
-    background-color: var(--regular-blue);
+  background-color: var(--regular-blue);
 }
 
 .project-item-status {
-    font-size: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    max-width: 5%;
-    padding: 0.5rem 2.2rem;
-    border-radius: 20px;
-  }
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 2.2rem;
+  border-radius: 20px;
+  width: 100%;
+}
 
 p.Ativo {
-    background-color: green;
-    color: var(--white);
+  background-color: green;
+  color: var(--white);
+}
+
+p.Finalizado {
+  background-color: #000000;
+  color: var(--white);
+}
+
+p.Cancelado {
+  background-color: #960000;
+  color: var(--white);
+}
+
+p.Desconhecido {
+  background-color: #666666;
+  color: var(--white);
+}
+
+@media (max-width: 700px) {
+
+  #content-main-page {
+    width: 90%;
   }
   
-  p.Finalizado {
-    background-color: #000000;
-    color: var(--white);
+  #content-new-project {
+  justify-content: center;  
   }
+
+  .project-list-item {
+      flex-direction: column;
+      height: 300px;
+  }
+
+  .project-left-info {
+      width: 100%;
+  }
+
+
+  .project-item-status {
+      height: 1.2rem;
+      width: 10%;
+  }
+
   
-  p.Cancelado {
-    background-color: #960000;
-    color: var(--white);
+  .project-right-info {
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-between;
+      width: 100%;
+      gap: 1rem;
+      height: 15%;
   }
-  
-  p.Desconhecido {
-    background-color: #666666;
-    color: var(--white);
+
+  .project-details-modal, .create-project-modal {
+    width: 100vw;
+    height: 100vh;
   }
+
+  .project-details-modal-content, .create-project-modal-content {
+    width: 100%;
+    height: 100%;
+    min-width: 100%;
+    min-height: 80%;
+  }
+
+  .project-details-modal-status {
+    min-width: 120px;
+  }
+
+  .create-project-forms {
+    min-width: 100%;
+    min-height: 100%;
+
+    justify-content: space-between;
+  }
+}
+

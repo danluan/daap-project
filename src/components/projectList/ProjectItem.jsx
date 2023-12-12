@@ -46,8 +46,9 @@ const ProjectItem = (props) => {
             </div>
             <div className='project-right-info'>
                 <p className={'project-item-status ' + projectStatus}>{projectStatus}</p>
-                <button onClick={openProjectDetailsModal} className='project-details-button'> Ver detalhes</button>
+                <button onClick={openProjectDetailsModal} className='project-details-button'>Detalhes</button>
             </div>
+
             {projectDetailsModal && 
             <ProjectDetailsModal 
             {...props} 
