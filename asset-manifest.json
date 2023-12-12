@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/react-gh-pages/static/css/main.766bea96.css",
-    "main.js": "/react-gh-pages/static/js/main.0316dec4.js",
-    "static/js/787.4842e379.chunk.js": "/react-gh-pages/static/js/787.4842e379.chunk.js",
-    "static/media/logo-name.png": "/react-gh-pages/static/media/logo-name.5ef1fb5d0028fc6301f4.png",
-    "index.html": "/react-gh-pages/index.html",
-    "main.766bea96.css.map": "/react-gh-pages/static/css/main.766bea96.css.map",
-    "main.0316dec4.js.map": "/react-gh-pages/static/js/main.0316dec4.js.map",
-    "787.4842e379.chunk.js.map": "/react-gh-pages/static/js/787.4842e379.chunk.js.map"
+    "main.css": "/daap-project/static/css/main.766bea96.css",
+    "main.js": "/daap-project/static/js/main.39e80161.js",
+    "static/js/787.4842e379.chunk.js": "/daap-project/static/js/787.4842e379.chunk.js",
+    "static/media/logo-name.png": "/daap-project/static/media/logo-name.5ef1fb5d0028fc6301f4.png",
+    "index.html": "/daap-project/index.html",
+    "main.766bea96.css.map": "/daap-project/static/css/main.766bea96.css.map",
+    "main.39e80161.js.map": "/daap-project/static/js/main.39e80161.js.map",
+    "787.4842e379.chunk.js.map": "/daap-project/static/js/787.4842e379.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.766bea96.css",
-    "static/js/main.0316dec4.js"
+    "static/js/main.39e80161.js"
   ]
 }
