@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/daap-project/static/css/main.7968e720.css",
+    "main.css": "/daap-project/static/css/main.1ca512a8.css",
     "main.js": "/daap-project/static/js/main.442f9f8b.js",
     "static/js/787.234d500c.chunk.js": "/daap-project/static/js/787.234d500c.chunk.js",
     "static/media/logo.png": "/daap-project/static/media/logo.a229816064f709343b4d.png",
     "static/media/logo-name.png": "/daap-project/static/media/logo-name.41365016c52759f3606b.png",
     "index.html": "/daap-project/index.html",
-    "main.7968e720.css.map": "/daap-project/static/css/main.7968e720.css.map",
+    "main.1ca512a8.css.map": "/daap-project/static/css/main.1ca512a8.css.map",
     "main.442f9f8b.js.map": "/daap-project/static/js/main.442f9f8b.js.map",
     "787.234d500c.chunk.js.map": "/daap-project/static/js/787.234d500c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7968e720.css",
+    "static/css/main.1ca512a8.css",
     "static/js/main.442f9f8b.js"
   ]
 }
