@@ -25,11 +25,11 @@ const ProjectItem = (props) => {
                 setStatus('Ativo');
                 break;
             case "1":
-                setStatus('Cancelado');
-                break;
-            case "2":
                 setStatus('Finalizado');
                 break;
+            case "2":
+                    setStatus('Cancelado');
+                    break;
             default:
                 setStatus('Desconhecido');
         }

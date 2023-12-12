@@ -55,9 +55,6 @@ contract Pinance {
 
     constructor() {
         projectCount = 0;
-        createProject("Dummy Project", "Dummy Institution", 10000000000, "Dummy Description", 1000000000000000000);
-        createProject("Dummy Project 2", "Dummy Institution 2", 20000000000, "Dummy Description 2", 2000000000000000000);
-        createProject("Dummy Project 3", "Dummy Institution 3", 30000000000, "Dummy Description 3", 3000000000000000000);
     }
 
     function createProject(string memory _name, string memory _educationInstitution, uint _deadline, string memory _description, uint _fundingGoal) public {
@@ -79,7 +76,7 @@ contract Pinance {
 
     function donate(uint _projectId) public payable {
         Project storage project = projects[_projectId];
-        require(block.timestamp < project.deadline, "Project funding deadline has passed.");
+        require(project.status == Status.Active, "Project must be active");
         require(msg.value > 0, "Donation must be greater than 0.");
 
         project.fundsRaised += msg.value;
@@ -90,13 +87,14 @@ contract Pinance {
 
     function finalizeProject(uint _projectId) public payable {
     Project storage project = projects[_projectId];
-    require(block.timestamp >= project.deadline, "Project deadline has not passed yet.");
+    // require(block.timestamp >= project.deadline, "Project deadline has not passed yet.");
     require(msg.sender == project.owner, "Only project owner can finalize.");
 
     if (project.fundsRaised >= project.fundingGoal) {
         project.status = Status.Closed;
         project.owner.transfer(project.fundsRaised);
     } else {
+        project.status = Status.Canceled;
         for (uint i = 0; i < project.transactions.length; i++) {
             Transaction storage refund = project.transactions[i];
             address payable donorAddress = payable(refund.donor);
@@ -106,7 +104,6 @@ contract Pinance {
                 }
         }
         }
-        project.status = Status.Canceled;
 
         emit ProjectFinalized(_projectId, project.status);
 

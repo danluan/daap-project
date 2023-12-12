@@ -12,7 +12,7 @@ import Header from "./components/Header/Header";
 
 import CreateProjectModal from "./components/Modals/CreateProjectModal/CreateProjectModal";
 
-const CONTRACT_ADDRESS = "0x75B29F89436CB24B9e8Cfa6963727Da2f11CED89";
+const CONTRACT_ADDRESS = "0x18641a9d061F8ED9B0Ed2373bd1672802aB26990";
 
 const DApp = {
   web3: null,
