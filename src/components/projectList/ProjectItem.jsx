@@ -19,7 +19,6 @@ const ProjectItem = (props) => {
     }
 
     useEffect(() => {
-        console.log(typeof(props.status))
         switch (props.status.toString()) {
             case "0":
                 setStatus('Ativo');

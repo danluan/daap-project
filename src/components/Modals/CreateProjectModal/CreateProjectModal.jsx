@@ -14,7 +14,6 @@ export default function CreateProjectModal(props) {
     let projectDeadline = document.getElementById('project-deadline').value;
 
     projectDeadline = new Date(projectDeadline).getTime() / 1000;
-    console.log(projectDeadline)
 
     props.createProjectDApp(projectName, projectIE, projectDescription, projectGoal, projectDeadline)
     props.closeCreateProjectModal()

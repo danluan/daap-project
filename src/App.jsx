@@ -12,7 +12,7 @@ import Header from "./components/Header/Header";
 
 import CreateProjectModal from "./components/Modals/CreateProjectModal/CreateProjectModal";
 
-const CONTRACT_ADDRESS = "0x18641a9d061F8ED9B0Ed2373bd1672802aB26990";
+const CONTRACT_ADDRESS = "0xbB06b4aBa10C28B5C579DE542F4093B5642Bc3F8";
 
 const DApp = {
   web3: null,
@@ -70,7 +70,6 @@ function App() {
 
   function createProjectDApp(name, IE, description, goal, deadline) {
     DApp.init().then((contract) => {
-      console.log(contract);
       contract.methods
         .createProject(name, IE, deadline, description, goal)
         .send({ from: DApp.account })
@@ -115,12 +114,10 @@ function App() {
 
   useEffect(() => {
     DApp.init().then((contract) => {
-      console.log(contract);
       contract.methods
         .getProjects()
         .call()
         .then((projects) => {
-          console.log(projects);
           setProject(projects);
         })
         .catch((error) => {
