@@ -30,21 +30,20 @@
     padding: 0 1.5rem;
     height: 90%;
     width: 70%;
+    max-height: fit-content;
 }
 
 .create-project-forms h1 {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 .create-project-forms label {
-    margin-bottom: 3.rem;
+    margin-bottom: .3rem;
 }
 
 .create-project-forms input, textarea {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
-
-
 
 .create-project-forms-buttons {
     display: flex;
