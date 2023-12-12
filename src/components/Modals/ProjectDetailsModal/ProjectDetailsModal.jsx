@@ -43,7 +43,7 @@ export default function ProjectDetailsModal(props) {
                     <h1>{props.name}</h1>
                     <p className={"project-details-modal-status " + props.status}>{props.status}</p>
                     <p>IE: {props.educationInstitution}</p>
-                    <p>Dono: {props.owner}</p>
+                    <p className="project-details-modal-owner">Dono: {props.owner}</p>
                     <p>Descrição: {props.description}</p>
                     <p>Meta: {weiToEtherString(props.fundingGoal.toString())} Ether</p>
                     <p>Adquiridos: {weiToEtherString(fundsRaised)} Ether</p>
