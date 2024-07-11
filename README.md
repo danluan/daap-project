@@ -1,6 +1,6 @@
 # Pinance
 
-Demo: https://danieluan.github.io/daap-project/
+Demo: https://danluan.github.io/daap-project/
 
 Plataforma para cadastro de projetos à serem financiados, onde um usuário pode cadastrar um projeto científico que necessite de fundos, seja para realizar uma viagem, prototipagem, etc.rt
 
